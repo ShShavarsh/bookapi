@@ -2,6 +2,7 @@ package com.glc;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -77,9 +78,10 @@ public class AppTest {
 
 		// Execute
 		List<? extends Book> bookList = cut.getBooks();
-
+		Book book1 = bookList.get(0);
+		
 		// ASSERT	
-		assertFalse(bookList.get(0) == book);
+		assertTrue(book1.equals(book));
 		
 		
 	}
