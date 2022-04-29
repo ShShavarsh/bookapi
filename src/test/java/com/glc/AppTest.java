@@ -1,6 +1,9 @@
 package com.glc;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
 
 import org.junit.Test;
 
@@ -9,12 +12,15 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+    
     @Test
-    public void shouldAnswerWithTrue()
+    public void onFirstCallBookListShouldBeEmpty()
     {
-        assertTrue( true );
+    	//SETUP
+    	ReadingList cut = new ReadingList();
+    	//Execute
+    	List<Book> books = cut.getBooks();
+    	//ASSERT
+    	assertEquals(0, books.size());
     }
 }
