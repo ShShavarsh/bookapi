@@ -38,7 +38,7 @@ public class ReadingList {
 		}
 	}
 	
-	public List<? extends Book> getBookByRating(int rating) {
+	public List<? extends Book> getBooksByRating(int rating) {
 		List<ReadingBook> readBooksListFilteredByRating = new ArrayList<ReadingBook>();
 		for(int i = 0;i < readBooksList.size(); i++) {
 			if(readBooksList.get(i).getRating() == rating) {

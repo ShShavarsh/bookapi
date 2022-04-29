@@ -98,7 +98,7 @@ public class AppTest {
 		cut.addBook(book4, "January 7", 5);
 
 		// Execute
-		List<? extends Book> bookList = cut.getBookByRating(4);
+		List<? extends Book> bookList = cut.getBooksByRating(4);
 
 		// ASSERT
 		for (int i = 0; i < bookList.size(); i++) {
