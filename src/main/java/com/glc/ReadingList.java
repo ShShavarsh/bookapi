@@ -7,6 +7,6 @@ import java.util.ArrayList;
 public class ReadingList {
 	
 	public List<Book> getBooks(){
-		return null;
+		return new ArrayList<Book>();
 	}
 }
