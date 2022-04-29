@@ -18,7 +18,7 @@ public class AppTest
     	//SETUP
     	ReadingList cut = new ReadingList();
     	//Execute
-    	List<Book> books = cut.getBooks();
+    	List<? extends Book> books = cut.getBooks();
     	//ASSERT
     	assertEquals(0, books.size());
     }

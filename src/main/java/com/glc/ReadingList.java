@@ -5,15 +5,25 @@ import java.util.ArrayList;
 
 
 public class ReadingList {
-	List<BookItem> readBooksList = new ArrayList<BookItem>();
 	
-	private class BookItem{
-		private Book book;
+	List<ReadingBook> readBooksList = new ArrayList<ReadingBook>();
+	
+	private class ReadingBook extends Book{
+		
 		private String dateRead;
 		private int rating;
-		public BookItem(Book book, String dateRead, int rating){
-			this.book = book;
+		
+		public ReadingBook(Book book, String dateRead, int rating){
+			super(book.title,book.author,book.length,book.year);
+			this.setDateRead(dateRead);
+			this.setRating(rating);
+		}
+		
+		public void setDateRead(String dateRead) {
 			this.dateRead = dateRead;
+		}
+		
+		public void setRating(int rating) {
 			this.rating = rating;
 		}
 	}
@@ -24,12 +34,12 @@ public class ReadingList {
 		
 	}
 	
-	public List<Book> getBooks(){
-		return new ArrayList<Book>();
+	public List<? extends Book> getBooks(){
+		return readBooksList;
 	}
 	
 	public void addBook(Book book, String dateRead,int rating){
-		this.readBooksList.add(new BookItem(book,dateRead,rating));
+		this.readBooksList.add(new ReadingBook(book,dateRead,rating));
 	}
 
 	public int numberRead() {
