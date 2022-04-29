@@ -66,9 +66,9 @@ public class AppTest {
 		for (int i = 0; i < cut.getReadBooksList().size(); i++) {
 			assertFalse(cut.getReadBooksList().get(i).getTitle().equals(book.title));
 		}
-		
+
 	}
-	
+
 	@Test
 	public void afterAddingBookToEmptyListItShouldBeInList() {
 		// SETUP
@@ -79,28 +79,30 @@ public class AppTest {
 		// Execute
 		List<? extends Book> bookList = cut.getBooks();
 		Book book1 = bookList.get(0);
-		
-		// ASSERT	
+
+		// ASSERT
 		assertTrue(book1.equals(book));
 	}
-	
-	//Given when I call getBooksByRating(), It should return a list of books that all have that rating.
+
 	@Test
 	public void getBooksByRatingshouldReturnListofBooksWithGivenRating() {
 		// SETUP
 		ReadingList cut = new ReadingList();
 		Book book1 = new Book("Art of Loving", "Erich Fromm", 133, 4);
 		Book book2 = new Book("Art of Being", "Erich Fromm", 144, 4);
+		Book book3 = new Book("Beyond the chain of illusion", "Erich Fromm", 200, 5);
+		Book book4 = new Book("Modern operating systems", "Andrew S. Tanenbaum", 1234, 4);
 		cut.addBook(book1, "January 1", 4);
 		cut.addBook(book2, "January 3", 4);
+		cut.addBook(book3, "January 5", 5);
+		cut.addBook(book4, "January 7", 5);
 
 		// Execute
 		List<? extends Book> bookList = cut.getBookByRating(4);
-		
-		// ASSERT	
-		for (int i = 0; i< bookList.size();i++) {
+
+		// ASSERT
+		for (int i = 0; i < bookList.size(); i++) {
 			assertTrue(((ReadingBook) bookList.get(i)).getRating() == 4);
-			
 		}
 	}
 
