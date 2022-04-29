@@ -54,4 +54,22 @@ public class AppTest
     	//ASSERT
     	assertEquals(4,numberOfBooks);
     }
+    
+    @Test
+    public void afterRemovingBookByTitleBookShouldNotBeInList()
+    {
+    	//SETUP
+    	ReadingList cut = new ReadingList();
+    	Book book = new Book("Art of Loving","Erich Fromm",133,4);
+    	cut.addBook(book,"January 1", 4);
+    	
+    	
+    	//Execute
+    	cut.deleteBook(book.title);
+    	
+    	//ASSERT
+    	assertEquals(0,cut.getBooks().size());
+    }
+    
+    
 }

@@ -46,6 +46,10 @@ public class ReadingList {
 		return this.readBooksList.size();
 				
 	}
+
+	public void deleteBook(String title) {
+		
+	}
 	
 	
 }
