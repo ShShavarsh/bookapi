@@ -67,5 +67,23 @@ public class AppTest {
 		}
 		
 	}
+	
+	@Test
+	public void afterAddingBookToEmptyListItShouldBeInList() {
+		// SETUP
+		ReadingList cut = new ReadingList();
+		Book book = new Book("Art of Loving", "Erich Fromm", 133, 4);
+		cut.addBook(book, "January 1", 4);
+
+		// Execute
+		List<? extends Book> bookList = cut.getBooks();
+
+		// ASSERT	
+		assertFalse(bookList.get(0) == book);
+		
+		
+	}
+	
+	
 
 }
