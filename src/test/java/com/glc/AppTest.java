@@ -28,8 +28,7 @@ public class AppTest
     {
     	//SETUP
     	ReadingList cut = new ReadingList();
-    	Book book = new Book("Art of Loving","Arich Fromm",133,4);//title,author,length,year
-    	
+    	Book book = new Book("Art of Loving","Erich Fromm",133,4);//title,author,length,year
     	
     	//Execute
     	cut.addBook(book,"January 1", 4);
