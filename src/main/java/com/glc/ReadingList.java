@@ -39,7 +39,13 @@ public class ReadingList {
 	}
 	
 	public List<? extends Book> getBookByRating(int rating) {
-		return null;
+		List<ReadingBook> readBooksListFilteredByRating = new ArrayList<ReadingBook>();
+		for(int i = 0;i < readBooksList.size(); i++) {
+			if(readBooksList.get(i).getRating() == rating) {
+				readBooksListFilteredByRating.add(readBooksList.get(i));
+			}
+		}
+		return readBooksListFilteredByRating;
 	}
 	
 }
