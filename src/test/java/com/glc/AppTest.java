@@ -82,10 +82,26 @@ public class AppTest {
 		
 		// ASSERT	
 		assertTrue(book1.equals(book));
-		
-		
 	}
 	
-	
+	//Given when I call getBooksByRating(), It should return a list of books that all have that rating.
+	@Test
+	public void getBooksByRatingshouldReturnListofBooksWithGivenRating() {
+		// SETUP
+		ReadingList cut = new ReadingList();
+		Book book1 = new Book("Art of Loving", "Erich Fromm", 133, 4);
+		Book book2 = new Book("Art of Being", "Erich Fromm", 144, 4);
+		cut.addBook(book1, "January 1", 4);
+		cut.addBook(book2, "January 3", 4);
+
+		// Execute
+		List<? extends Book> bookList = cut.getBookByRating(4);
+		
+		// ASSERT	
+		for (int i = 0; i< bookList.size();i++) {
+			assertTrue(((ReadingBook) bookList.get(i)).getRating() == 4);
+			
+		}
+	}
 
 }
