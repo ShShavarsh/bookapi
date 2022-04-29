@@ -48,7 +48,12 @@ public class ReadingList {
 	}
 
 	public void deleteBook(String title) {
-		
+		for(int i = 0;i < readBooksList.size(); i++) {
+			if(readBooksList.get(i).getTitle().equals(title)) {
+				readBooksList.remove(i);
+			}
+			
+		}
 	}
 	
 	
