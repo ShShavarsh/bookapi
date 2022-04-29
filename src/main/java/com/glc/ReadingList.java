@@ -8,7 +8,8 @@ public class ReadingList {
 	
 	List<ReadingBook> readBooksList = new ArrayList<ReadingBook>();
 	
-	private class ReadingBook extends Book{
+
+	protected class ReadingBook extends Book{
 		
 		private String dateRead;
 		private int rating;
@@ -32,6 +33,10 @@ public class ReadingList {
 	
 	public ReadingList() {
 		
+	}
+	
+	public List<ReadingBook> getReadBooksList() {
+		return readBooksList;
 	}
 	
 	public List<? extends Book> getBooks(){
